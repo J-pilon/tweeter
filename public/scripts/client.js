@@ -7,7 +7,6 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 
 $(document).ready(function() {
-
   const data = [
     {
       "user": {
@@ -31,40 +30,39 @@ $(document).ready(function() {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];  
   
+  $("#form-tweet").submit(function(event) {
+    event.preventDefault();
+    const userSubmit = $("form").serialize();
+    console.log(userSubmit);
+    $.ajax("/tweets", { method: "POST", data: userSubmit })
+  });
+
   const createTweetElement = function(tweet) {
-    let $tweet = 
+    let $tweet =
     `<section id="tweets-container">
         <header class="article-header">
           <img ${tweet.user.avatars}>
           <div class="tweeters-icon-name"><div>${tweet.user.name}</div><div>${tweet.user.handle}</div>
         </div>
         </header>
-
         <footer class="article-footer">
           <label class="feed-message" for="feed-posts"></label>
-
           <div class="feed-message">${tweet.content.text}</div>
-
           <div class="article-footer">      
             <div id="day-counter">days</div>
             <div><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>         
           </div>
-
         </footer> 
-
-    </section>`
+    </section>`;
     return $tweet;
-  }
-
+  };
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-
       const $tweet = createTweetElement(tweet);
       $("#tweets-container").append($tweet);
     }
-  }
-
+  };
   return renderTweets(data);
 });
