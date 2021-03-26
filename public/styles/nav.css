@@ -1,0 +1,30 @@
+.nav {
+  font-family: 'Bungee', cursive;
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #4056A1;
+  font-size: 35px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5em;
+}
+
+.nav-new-tweet {
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: large;
+  display: flex;
+  align-self: center;
+}
+
+#nav-single-word {
+  padding-right: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
