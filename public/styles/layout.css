@@ -54,8 +54,13 @@ body {
 } */
 
 article#tweets-container {
-  height: 200px;
-  width: 100%;
+  height: 70vw;
+}
+
+section#article-tweets {
+  height: 70%;
+  width: 90%;
+  margin: auto;
   border: solid grey 3px;
   background-color: white;
   background-image: none;
@@ -89,7 +94,7 @@ header.article-header img {
   width: auto;
 }
 
-footer.article-tweets {
+footer.article-footer{
   height: 40%;
   width: 100%;
   display: flex;
@@ -109,6 +114,8 @@ div.feed-message {
   border-right: transparent;
   border-left: transparent;
   background-color: transparent;
+  display: flex;
+  flex-direction: column-reverse;  
 }
 
 .article-footer {
