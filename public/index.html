@@ -44,11 +44,9 @@
       <div class="nav-new-tweet"><div id="nav-single-word">Write</div>a new tweet</div>
     </nav>
     <header class="header-user">
-      <div>
+      <div class="header-users-name">
           <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-          <h2 class="header-users-name">Josiah Pilon</h2>
+          <h2>Josiah Pilon</h2>
       </div>
     </header>
 
@@ -56,7 +54,9 @@
     <main class="main-container">
 
       <section class="section-new-tweet">
-
+        <div id="alert">
+          Input exceeds limit of 140 characters
+        </div>
         <div class="tweet-input-header">
           <h2>Compose Tweet</h2>
         </div>
@@ -83,3 +83,4 @@
   </body>
 </html>
 
+<!-- onclick="this.parentElement.style.display='none';" -->

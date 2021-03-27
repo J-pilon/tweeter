@@ -58,9 +58,8 @@ article#tweets-container {
 }
 
 section#article-tweets {
-  height: 70%;
   width: 90%;
-  margin: auto;
+  margin: 10px auto;
   border: solid grey 3px;
   background-color: white;
   background-image: none;

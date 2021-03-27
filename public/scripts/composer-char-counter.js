@@ -1,6 +1,6 @@
 $(document).ready(function() {
   charCounter();
-
+  hideAlert();
 });
 
 const charCounter = function() {
@@ -13,6 +13,19 @@ const charCounter = function() {
     }
     // why is this bad practice?
   });
+};
+
+const hideAlert = function() {
+  $("#alert").hide();
+  $("textarea").on("input", function() {
+    let text = $(this).val();
+    if (text.length <= 140) {
+      $("#alert").hide();
+    } else {
+      $("#alert").show();
+    }
+  });
+
 };
 // target the right element
 // choose the right eventlistener

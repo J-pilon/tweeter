@@ -20,8 +20,6 @@ const onSubmit = function(event) {
 
   if (!input) {
     alert("No tweet entered");
-  } else if (userSubmit.length > 140) {
-    alert("Exceeds max input length!");
   } else {
     $.ajax("/tweets", { method: "POST", data: userSubmit })
       .then(function() {
@@ -54,7 +52,7 @@ const createTweetElement = function(tweet) {
   // $("div.feed-message").text(tweet.content.text);
   const text = tweet.content.text;
   let $tweet =
-  `<section id="tweets-container">
+  `<section id="article-tweets">
       <header class="article-header">
         <img ${tweet.user.avatars}>
         <div class="tweeters-icon-name"><div>${tweet.user.name}</div><div>${tweet.user.handle}</div>
