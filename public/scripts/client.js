@@ -20,10 +20,8 @@ const onSubmit = function(event) {
 
   if (!input) {
     alert("No tweet entered");
-    return;
   } else if (userSubmit.length > 140) {
     alert("Exceeds max input length!");
-    return;
   } else {
     $.ajax("/tweets", { method: "POST", data: userSubmit })
       .then(function() {
@@ -46,7 +44,15 @@ const loadTweets = function() {
     });
 };
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function(tweet) {
+  // $("div.feed-message").text(tweet.content.text);
+  const text = tweet.content.text;
   let $tweet =
   `<section id="tweets-container">
       <header class="article-header">
@@ -56,9 +62,9 @@ const createTweetElement = function(tweet) {
       </header>
       <footer class="article-footer">
         <label class="feed-message" for="feed-posts"></label>
-        <div class="feed-message">${tweet.content.text}</div>
+        <div class="feed-message">${escape(text)}</div>
         <div class="article-footer">      
-          <div id="day-counter">days</div>
+          <div id="day-counter">${tweet.created_at}</div>
           <div><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>         
         </div>
       </footer> 
