@@ -10,23 +10,40 @@ $(document).ready(function() {
 
   $("#form-tweet").submit(onSubmit);
   loadTweets();
-  
+
 });
 
 const onSubmit = function(event) {
   event.preventDefault();
   const userSubmit = $(this).serialize();
-  $.ajax("/tweets", { method: "POST", data: userSubmit })
-    .then(function() {
-      loadTweets();
-    })
-    .catch(function(err) {console.log(err)})
+  const input = $("textarea").val();
+
+  if (!input) {
+    alert("No tweet entered");
+    return;
+  } else if (userSubmit.length > 140) {
+    alert("Exceeds max input length!");
+    return;
+  } else {
+    $.ajax("/tweets", { method: "POST", data: userSubmit })
+      .then(function() {
+        // $("textarea").empty();
+        loadTweets();
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
 };
 
 const loadTweets = function() {
   $.ajax("/tweets", { method: "GET", dataType: "json" })
-    .then(function(res) {renderTweets(res)})
-    .catch(function(err) {console.log(err)});
+    .then(function(res) {
+      renderTweets(res);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 };
 
 const createTweetElement = function(tweet) {
@@ -50,7 +67,7 @@ const createTweetElement = function(tweet) {
 };
 
 const renderTweets = function(tweets) {
-  const container = $("#tweets-container")
+  const container = $("#tweets-container");
   container.empty();
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
