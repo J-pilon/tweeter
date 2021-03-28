@@ -57,7 +57,7 @@ article#tweets-container {
   height: 70vw;
 }
 
-section#article-tweets {
+section.article-tweets {
   width: 80vw;
   margin: 10px auto;
   padding: 10px;
@@ -129,6 +129,14 @@ div.feed-message {
 
 .handler:hover {
   font-weight: bold;
+}
+
+/* .tiny-icons {
+  display: none;
+} */
+
+.hide {
+  display: none;
 }
 
 @media only screen and (min-width: 1024px) {

@@ -10,8 +10,15 @@ $(document).ready(function() {
 
   $("#form-tweet").submit(onSubmit);
   loadTweets();
-
+  showIcons();
+  $("#tweets-container").mouseover(function() {
+    $(".tiny-icons").removeClass("hide");
+  });
+  $("#tweets-container").mouseout(function() {
+    $(".tiny-icons").addClass("hide");
+  });
 });
+
 
 const onSubmit = function(event) {
   event.preventDefault();
@@ -49,12 +56,11 @@ const escape =  function(str) {
 }
 
 const createTweetElement = function(tweet) {
-  // $("div.feed-message").text(tweet.content.text);
   const text = tweet.content.text;
   let $tweet =
-  `<section id="article-tweets">
+  `<section class="article-tweets"> 
       <header class="article-header">
-        <img ${tweet.user.avatars}>
+      <img src=${tweet.user.avatars}>
         <div class="tweeters-icon-name"><div>${tweet.user.name}</div><div class="handler">${tweet.user.handle}</div>
       </div>
       </header>
@@ -63,7 +69,7 @@ const createTweetElement = function(tweet) {
         <div class="feed-message">${escape(text)}</div>
         <div class="article-footer">      
           <div id="day-counter">${tweet.created_at}</div>
-          <div><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>         
+          <div class="tiny-icons hide"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>         
         </div>
       </footer> 
   </section>`;
@@ -77,4 +83,11 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     container.prepend($tweet);
   }
+};
+
+const showIcons = function() {
+  console.log("here I am");
+  $("#article-tweets").hover(function() {
+    $(".tiny-icons:hidden").show();
+  });
 };
