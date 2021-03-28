@@ -33,15 +33,20 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
 
     <!-- Character Counter -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+    <script type="text/javascript" src="/scripts/input-tweets-container.js"></script>
+    
+    <!-- not sure if this should be here lol -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span>tweeter</span>
-      <div class="nav-new-tweet"><div id="nav-single-word">Write</div>a new tweet</div>
+      <div class="nav-new-tweet">
+        <strong>Write</strong>a new tweet
+        <img src="/images/icons8-double-down-26.png">
+      </div>     
     </nav>
     <header class="header-user">
       <div class="header-users-name">
@@ -53,7 +58,7 @@
     <!-- Page-specific (main) content here -->
     <main class="main-container">
 
-      <section class="section-new-tweet">
+      <section id="section-new-tweet">
         <div id="alert">
           Input exceeds limit of 140 characters
         </div>

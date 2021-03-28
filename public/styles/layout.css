@@ -15,7 +15,7 @@ html {
  */
 .main-container {
   margin: auto;
-  height: 200px;
+  height: 100%;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ body {
   font-size: 24px;
 }
 
-/* section#tweets-container {
+section#tweets-container {
   margin-bottom: 50px;
   padding: 10px;
   height: 200px;
@@ -51,15 +51,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-} */
+}
 
 article#tweets-container {
   height: 70vw;
 }
 
 section#article-tweets {
-  width: 90%;
+  width: 80vw;
   margin: 10px auto;
+  padding: 10px;
   border: solid grey 3px;
   background-color: white;
   background-image: none;
@@ -89,8 +90,8 @@ div.tweeter-icon-name div {
 }
 
 header.article-header img {
-  height: auto;
-  width: auto;
+  height: 50px;
+  width: 50px;
 }
 
 footer.article-footer{
@@ -124,4 +125,25 @@ div.feed-message {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.handler:hover {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .body {
+    display: flex;
+    flex-direction: row;
+  }
+  header.header-user {
+    width: 40%;
+    height: 100%;
+  }
+  .main-container {
+    width: 60%;
+    height: 100%;
+    float: right;
+    margin: 0%;
+  }
 }

@@ -1,6 +1,7 @@
 $(document).ready(function() {
   charCounter();
   hideAlert();
+  unhideTweetArea();
 });
 
 const charCounter = function() {
@@ -11,7 +12,6 @@ const charCounter = function() {
     } else {
       $(".counter").val(140 - text.length).removeClass("red-counter");
     }
-    // why is this bad practice?
   });
 };
 
@@ -25,8 +25,15 @@ const hideAlert = function() {
       $("#alert").show();
     }
   });
-
 };
+
+const unhideTweetArea = function() {
+  $(".nav-new-tweet").click(function(){
+    $("#section-new-tweet:hidden").show();
+  })
+}
+
+
 // target the right element
 // choose the right eventlistener
 // effects

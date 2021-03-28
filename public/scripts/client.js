@@ -55,7 +55,7 @@ const createTweetElement = function(tweet) {
   `<section id="article-tweets">
       <header class="article-header">
         <img ${tweet.user.avatars}>
-        <div class="tweeters-icon-name"><div>${tweet.user.name}</div><div>${tweet.user.handle}</div>
+        <div class="tweeters-icon-name"><div>${tweet.user.name}</div><div class="handler">${tweet.user.handle}</div>
       </div>
       </header>
       <footer class="article-footer">
