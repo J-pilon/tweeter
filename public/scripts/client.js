@@ -41,7 +41,15 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
+const dayTracker = function(time) {
+  let d = new Date();
+  let n = d.getTime();
+  let date = n - time;
+  return Math.floor((date / (60*60*24*1000))) + " days ago"
+}
+
 const createTweetElement = function(tweet) {
+  let daysSince = dayTracker(tweet.created_at);
   const text = tweet.content.text;
   let $tweet =
   `<section class="article-tweets"> 
@@ -54,7 +62,7 @@ const createTweetElement = function(tweet) {
         <label class="feed-message" for="feed-posts"></label>
         <div class="feed-message">${escape(text)}</div>
         <div class="article-footer">      
-          <div id="day-counter">${tweet.created_at}</div>
+          <div id="day-counter">${daysSince}</div>
           <div class="tiny-icons hide"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>         
         </div>
       </footer> 
