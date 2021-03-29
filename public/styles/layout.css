@@ -22,11 +22,6 @@ html {
   background-color: #f4f1ec;
 }
 
-
-/* header {
-  padding-top: 120px;
-} */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -58,7 +53,6 @@ article#tweets-container {
 }
 
 section.article-tweets {
-  width: 80vw;
   margin: 10px auto;
   padding: 10px;
   border: solid grey 3px;
@@ -115,7 +109,12 @@ div.feed-message {
   border-left: transparent;
   background-color: transparent;
   display: flex;
-  flex-direction: column-reverse;  
+  flex-direction: column-reverse;
+  font-size: 17px;  
+  font-weight: 600;
+  word-wrap: break-word;
+
+
 }
 
 .article-footer {
@@ -131,10 +130,6 @@ div.feed-message {
   font-weight: bold;
 }
 
-/* .tiny-icons {
-  display: none;
-} */
-
 .hide {
   display: none;
 }
@@ -144,14 +139,32 @@ div.feed-message {
     display: flex;
     flex-direction: row;
   }
+
   header.header-user {
-    width: 40%;
-    height: 100%;
+    width: 30vw;
+    height: 58vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 27vh;
+    float: left;
   }
+
   .main-container {
     width: 60%;
     height: 100%;
     float: right;
-    margin: 0%;
+    margin-top: 120px;
+  }
+
+  #alert {
+    margin-right: 6%;
+  }
+
+  .section-tweet-input {
+    padding-right: 6%;
+  }
+
+  article#tweets-container {
+    margin-right: 6%;
   }
 }

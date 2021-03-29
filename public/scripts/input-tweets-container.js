@@ -27,15 +27,9 @@ const hideAlert = function() {
   });
 };
 
+// unhides text area
 const unhideTweetArea = function() {
-  $(".nav-new-tweet").click(function(){
+  $(".nav-new-tweet").click(function() {
     $("#section-new-tweet:hidden").show();
-  })
-}
-
-
-// target the right element
-// choose the right eventlistener
-// effects
-// -animation effect
-// -dom manipulation
+  });
+};

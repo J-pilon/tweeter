@@ -1,6 +1,5 @@
 #section-new-tweet {
   width: 100%;
-  margin: auto 37px;
   font-family: 'Bungee', cursive;
   display: none;
   flex-direction: column;
@@ -14,17 +13,6 @@
   background-color: rgb(216 117 117);
   font-size: .75em;
 }
-
-.tweet-input-header {
-  height: 50px;
-}
-
-.tweet-input-header h2 {
-  font-size: 1.5rem;
-}
-
-.section-tweet-input {
-  width: 80vw;}
 
 .form-label {
   font-weight: 300;

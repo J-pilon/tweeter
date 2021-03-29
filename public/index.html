@@ -35,7 +35,7 @@
     <!-- Character Counter -->
     <script type="text/javascript" src="/scripts/input-tweets-container.js"></script>
     
-    <!-- not sure if this should be here lol -->
+    <!-- Disable viewport zooming -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
@@ -50,39 +50,29 @@
     </nav>
     <header class="header-user">
       <div class="header-users-name">
-          <img src="/images/profile-hex.png"> 
-          <h2>Josiah Pilon</h2>
+          <img class="identity"src="/images/profile-hex.png"> 
+          <h2 class="identity">Josiah Pilon</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="main-container">
-
       <section id="section-new-tweet">
         <div id="alert">
           Input exceeds limit of 140 characters
         </div>
-        <div class="tweet-input-header">
-          <h2>Compose Tweet</h2>
-        </div>
-
         <div class="section-tweet-input">
-
           <form id="form-tweet" method="POST" action="/tweets" >
             <label class="form-label" for="text">What are you humming about?</label>
             <textarea name="text" class="tweet-text"></textarea>
-
             <div id="button-counter">
               <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
-
         </div>
       </section>
-   
       <article id="tweets-container">
-
       </article>
     </main>
   </body>

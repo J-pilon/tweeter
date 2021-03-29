@@ -14,8 +14,7 @@
   padding: 20px;
 }
 
-.nav-new-tweet {
-  
+.nav-new-tweet { 
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: large;
@@ -26,4 +25,8 @@
 strong {
   font-weight: 700;
   padding-right: 4px;
+}
+
+div img {
+  margin: 0 5px;
 }

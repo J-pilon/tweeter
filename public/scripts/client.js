@@ -1,22 +1,8 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// Test / driver code (temporary). Eventually will get this from the server.
-
 $(document).ready(function() {
 
   $("#form-tweet").submit(onSubmit);
   loadTweets();
   showIcons();
-  $("#tweets-container").mouseover(function() {
-    $(".tiny-icons").removeClass("hide");
-  });
-  $("#tweets-container").mouseout(function() {
-    $(".tiny-icons").addClass("hide");
-  });
 });
 
 
@@ -30,7 +16,6 @@ const onSubmit = function(event) {
   } else {
     $.ajax("/tweets", { method: "POST", data: userSubmit })
       .then(function() {
-        // $("textarea").empty();
         loadTweets();
       })
       .catch(function(err) {
@@ -49,11 +34,12 @@ const loadTweets = function() {
     });
 };
 
-const escape =  function(str) {
+// prevents cross-site-scripting
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const createTweetElement = function(tweet) {
   const text = tweet.content.text;
@@ -85,9 +71,12 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Effect for the tiny icons in the tweet feed
 const showIcons = function() {
-  console.log("here I am");
-  $("#article-tweets").hover(function() {
-    $(".tiny-icons:hidden").show();
+  $("#tweets-container").mouseover(function() {
+    $(".tiny-icons").removeClass("hide");
+  });
+  $("#tweets-container").mouseout(function() {
+    $(".tiny-icons").addClass("hide");
   });
 };
