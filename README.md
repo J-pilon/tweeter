@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["This showcases Tweeters desktop view. The text area is hidden until the user clicks the arrow at the top right."](https://github.com/J-pilon/tweeter/commit/430e35f7085e77263b12acfb9e2eb38ff20edea5#diff-0d71593acb40dda63d6d4751a4c5e0ed04776655ebd777562544e9678e9ecb83)
-!["The showcases Tweeters mobile view. "](https://github.com/J-pilon/tweeter/commit/430e35f7085e77263b12acfb9e2eb38ff20edea5#diff-ab7ee3b14bf42418adf9386c1650bc73a54110b658ff4bae0f7773c18fc6c317)
+!["This showcases Tweeters desktop view. The text area is hidden until the user clicks the arrow at the top right."](https://raw.githubusercontent.com/J-pilon/tweeter/430e35f7085e77263b12acfb9e2eb38ff20edea5/docs/Screenshot%20from%202021-03-28%2021-36-48.png)
+!["The showcases Tweeters mobile view. "](https://raw.githubusercontent.com/J-pilon/tweeter/de1808ed246cbadab59296ffae2b6a135bb1da10/docs/Screenshot%20from%202021-03-28%2021-37-40.png)
 
 
 ## Getting Started
