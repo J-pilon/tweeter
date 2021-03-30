@@ -63,6 +63,10 @@ section.article-tweets {
   justify-content: space-between;
 }
 
+section.article-tweets:hover {
+  border-color: black;
+}
+
 header.article-header {
   height: 30%;
   width: 100%;
