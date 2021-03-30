@@ -130,6 +130,7 @@ div.feed-message {
   font-weight: bold;
 }
 
+/* class for tiny icons */
 .hide {
   display: none;
 }
@@ -154,10 +155,6 @@ div.feed-message {
     height: 100%;
     float: right;
     margin-top: 120px;
-  }
-
-  #alert {
-    margin-right: 6%;
   }
 
   .section-tweet-input {

@@ -15,14 +15,22 @@ const charCounter = function() {
   });
 };
 
+// Alert for the text area input
 const hideAlert = function() {
   $("#alert").hide();
   $("textarea").on("input", function() {
     let text = $(this).val();
     if (text.length <= 140) {
       $("#alert").hide();
-    } else {
-      $("#alert").show();
+      return;
+    }
+    if (!text) {
+      $("#alert").text("No text entered!").show();
+      return;
+    }
+    if (text.length > 140) {
+      $("#alert").text("Input exceeds limit of 140 characters!").show();
+      return;
     }
   });
 };
@@ -31,5 +39,6 @@ const hideAlert = function() {
 const unhideTweetArea = function() {
   $(".nav-new-tweet").click(function() {
     $("#section-new-tweet:hidden").show();
+    $("#arrow").addClass("arrow-border");
   });
 };

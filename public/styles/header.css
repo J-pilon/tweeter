@@ -17,6 +17,10 @@
   font-size: 75%;
 }
 
+.arrow-border {
+  border: 2px solid black;
+}
+
 .identity {
   height: 70%;
 }

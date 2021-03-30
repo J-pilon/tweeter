@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $("#form-tweet").submit(onSubmit);
   loadTweets();
   showIcons();
@@ -11,12 +10,11 @@ const onSubmit = function(event) {
   const userSubmit = $(this).serialize();
   const input = $("textarea").val();
 
-  if (!input) {
-    alert("No tweet entered");
-  } else {
+  if (input.length <= 140) {
     $.ajax("/tweets", { method: "POST", data: userSubmit })
       .then(function() {
         loadTweets();
+        $("textarea").val("");
       })
       .catch(function(err) {
         console.log(err);
