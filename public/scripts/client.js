@@ -17,7 +17,8 @@ const onSubmit = function(event) {
         $("textarea").val("");
       })
       .catch(function(err) {
-        console.log(err);
+        const responseError = err.responseJSON.error;
+        $("#alert").text(responseError).show();
       });
   }
 };

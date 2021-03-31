@@ -20,12 +20,9 @@ const hideAlert = function() {
   $("#alert").hide();
   $("textarea").on("input", function() {
     let text = $(this).val();
+
     if (text.length <= 140) {
       $("#alert").hide();
-      return;
-    }
-    if (!text) {
-      $("#alert").text("No text entered!").show();
       return;
     }
     if (text.length > 140) {
