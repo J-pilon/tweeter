@@ -44,8 +44,8 @@ const dayTracker = function(time) {
   let d = new Date();
   let n = d.getTime();
   let date = n - time;
-  return Math.floor((date / (60*60*24*1000))) + " days ago"
-}
+  return Math.floor((date / (60 * 60 * 24 * 1000))) + " days ago";
+};
 
 const createTweetElement = function(tweet) {
   let daysSince = dayTracker(tweet.created_at);
